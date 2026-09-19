@@ -4,7 +4,7 @@ Public GTM page for **https://hoopstarx.com**. The separate Lovable application 
 
 ## Website
 
-This is a dependency-free static site. Serve the repository root; no build command or environment variables are required. The page works without JavaScript; `site.js` only updates the copyright year.
+This is a dependency-free static site. Serve the repository root; no build command or environment variables are required. The page works without JavaScript; `site.js` updates the copyright year, provides a motion pause/play control, respects reduced-motion preferences, and pauses decorative loops while the hero is offscreen or the browser tab is hidden.
 
 - `index.html`: homepage, metadata, inline SVG favicon and demo-safe product illustrations.
 - `styles.css`: responsive layout and HoopStarX brand styling.

@@ -6,3 +6,43 @@
 .hero-copy,.hero-product{min-width:0}
 @media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr)}.hero-product{width:min(380px,100%)}.phone{max-width:100%}.orbit-label{display:none}.hero-detail{max-width:100%}.actions{column-gap:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* A looping jump shot, drawn in the same blue court-line language. */
+.shot-scene{position:relative;width:100%;height:170px;margin-top:-35px;margin-bottom:12px}
+.shot-art{display:block;width:100%;height:160px;overflow:visible;pointer-events:none}
+.shot-guide{opacity:.3;stroke-width:1.5}
+.shot-ball{transform:translate(30px,132px);animation:jump-shot 6s linear infinite}
+.ball-spin{animation:ball-spin 6s linear infinite}
+.basket-net{transform-origin:327px 94px;animation:net-swish 6s ease-in-out infinite}
+.swish-ring{opacity:0;transform-origin:327px 139px;animation:score-ring 6s ease-out infinite}
+.motion-toggle{position:absolute;left:12px;bottom:0;border:0;border-bottom:1px solid #7183a4;background:transparent;color:#bdcbe3;padding:6px 0;font:600 .75rem var(--body);cursor:pointer;min-height:32px}
+.motion-toggle span{margin-left:10px}.motion-toggle:hover{color:white}.motion-toggle:focus-visible{outline:3px solid var(--streak);outline-offset:5px}.motion-toggle[hidden]{display:none}
+.hero-product>.orbit-label{top:190px}
+.hero-product>.phone{animation:phone-float 6s ease-in-out infinite}
+.hero-product>.award-sticker{animation:award-float 6s ease-in-out infinite}
+.motion-paused .hero *, .motion-idle .hero *{animation-play-state:paused!important}
+@keyframes jump-shot{
+  0%,8%{transform:translate(30px,132px);opacity:0}
+  12%{transform:translate(30px,132px);opacity:1}
+  18%{transform:translate(56px,94px)}
+  24%{transform:translate(83px,63px)}
+  30%{transform:translate(111px,40px)}
+  36%{transform:translate(140px,25px)}
+  42%{transform:translate(169px,18px)}
+  48%{transform:translate(199px,19px)}
+  54%{transform:translate(230px,27px)}
+  60%{transform:translate(262px,42px)}
+  66%{transform:translate(294px,65px)}
+  72%{transform:translate(327px,91px)}
+  77%{transform:translate(327px,122px);opacity:1}
+  83%{transform:translate(327px,159px);opacity:0}
+  100%{transform:translate(327px,159px);opacity:0}
+}
+@keyframes ball-spin{from{transform:rotate(0)}to{transform:rotate(540deg)}}
+@keyframes net-swish{0%,71%,91%,100%{transform:scale(1) skewX(0)}76%{transform:scale(.8,1.23) skewX(-4deg)}82%{transform:scale(1.08,.92) skewX(3deg)}87%{transform:scale(.97,1.04)}}
+@keyframes score-ring{0%,77%,100%{opacity:0;transform:scale(.7)}80%{opacity:.65;transform:scale(1)}91%{opacity:0;transform:scale(1.9)}}
+@keyframes phone-float{0%,100%{transform:translateY(0) rotate(4deg)}50%{transform:translateY(-8px) rotate(3deg)}}
+@keyframes award-float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-5px) rotate(-3deg)}}
+@media(max-width:760px){.shot-scene{margin-top:-15px;height:155px;margin-bottom:24px}.shot-art{height:145px}.hero-product>.phone{animation-name:phone-float-mobile}}
+@keyframes phone-float-mobile{0%,100%{transform:translateY(0) rotate(2deg)}50%{transform:translateY(-5px) rotate(1deg)}}
+@media(prefers-reduced-motion:reduce){.shot-ball{transform:translate(260px,42px);opacity:1}.hero-product>.phone{transform:rotate(3deg)}.motion-toggle{display:none}}
